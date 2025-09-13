@@ -25,10 +25,14 @@ export const FetchProductos = () => {
   return (
     <>
       {isLoading
-        ? <div className="spinner-border text-warning" role="status">
-          <span className="visually-hidden">Loading...</span>
+        ?
+        <div className="d-flex justify-content-center mt-5">
+          <div className="spinner-border text-warning" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
         </div>
-        : <div className="container mt-4">
+        :
+        <div className="container mt-4">
           <div className="row">
             {productos.map(item => (
               <div key={item.id} className="col-md-3 mb-4">
