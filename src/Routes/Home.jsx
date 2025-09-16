@@ -1,35 +1,26 @@
-import React from 'react'
+import  { useContext } from 'react'
+import { UsuarioContext } from '../Context/UsuarioContext'
 
 export const Home = () => {
+
+  const { usuario} = useContext(UsuarioContext)
   return (
     <>
       <table className="table table-warning">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Tecnología</th>
+      <th scope="col">Email</th>
+      <th scope="col">Redes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td>@social</td>
+      <th scope="row">{usuario.nombre}</th>
+      <td>{usuario.tecnologia}</td>
+      <td>{usuario.email}</td>
+      <td>{usuario.redes}</td>
     </tr>
   </tbody>
 </table>

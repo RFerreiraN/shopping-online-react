@@ -1,15 +1,17 @@
-import React from 'react'
+import { UsuarioContext } from './UsuarioContext'
 
-export const UsuarioProvider = () => {
+ const usuario = {
+    nombre: 'Ricardo Ferreira',
+    tecnologia: 'React',
+    email: 'ricardo@ferreira.pt',
+    redes: '@RFerreiran'
+  }
 
-    const usuario = {
-      nombre : 'Ricardo',
-      tecnologia : 'React',
-      redes : 'RFerreiran'
-    }
+export const UsuarioProvider = ({ children }) => {
+
   return (
-    <>
-      
-    </>
+    <UsuarioContext.Provider value={{ usuario  }}>
+      {children}
+    </UsuarioContext.Provider>
   )
 }
