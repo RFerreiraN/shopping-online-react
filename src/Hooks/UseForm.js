@@ -1,15 +1,9 @@
+import { useState } from "react";
 
-export const UseForm = () => {
+export const UseForm = (initialForm) => {
+   
+  const [usuario, setUsuario] = useState(initialForm)
   
-  const initalForm = {
-    nombre: '',
-    tecnologia: '',
-    email: '',
-    redes: ''
-  }
-
-  const [usuario, setUsuario] = useState(initalForm)
-  const { nombre, tecnologia, email, redes } = usuario
   const handleInput = ({ target }) => {
     const { name, value } = target;
     setUsuario({
@@ -19,10 +13,18 @@ export const UseForm = () => {
   };
   const onsubmitForm = (evento) => {
     evento.preventDefault();
+    if(usuario.nombre.trim() === '' || usuario.tecnologia.trim() === '' || usuario.email.trim() === '' || usuario.redes.trim() === '' ) return
     console.log(usuario)
+    resetForm()
+  }
+
+  const resetForm = () => {
+    setUsuario(initialForm)
   }
 
   return {
-
+    usuario,
+    handleInput,
+    onsubmitForm
   }
 }

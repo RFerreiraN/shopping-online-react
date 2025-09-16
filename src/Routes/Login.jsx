@@ -1,9 +1,20 @@
 import { useState } from 'react'
+import { UseForm } from '../Hooks/UseForm'
 
 export const Login = () => {
 
+  const initalForm = {
+    nombre: '',
+    tecnologia: '',
+    email: '',
+    redes: ''
+  }
+
+  const { usuario, handleInput, onsubmitForm } = UseForm(initalForm)
+  const { nombre, tecnologia, email, redes } = usuario
+
   return (
-    <form onSubmit={onsubmitForm}>
+    <form className='container' onSubmit={onsubmitForm}>
       <div className="mb-3">
         <label htmlFor="nombre" className="form-label">Nombre</label>
         <input
@@ -15,7 +26,7 @@ export const Login = () => {
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="tecnologia" className="form-label">tecnologia</label>
+        <label htmlFor="tecnologia" className="form-label">Tecnología</label>
         <input
           type="text"
           className="form-control"
