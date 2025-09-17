@@ -3,15 +3,15 @@ import { UsuarioContext } from '../Context/UsuarioContext'
 
 export const Carrito = () => {
 
-  const { usuario } = useContext(UsuarioContext)
+  const { user } = useContext(UsuarioContext)
 
   return (
     <>
       <ul>
-        <li>{usuario.nombre}</li>
-        <li>{usuario.tecnologia}</li>
-        <li>{usuario.email}</li>
-        <li>{usuario.redes}</li>
+        <li>{user.nombre}</li>
+        <li>{user.tecnologia}</li>
+        <li>{user.email}</li>
+        <li>{user.redes}</li>
       </ul>
     </>
   )

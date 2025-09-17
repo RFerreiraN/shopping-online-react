@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { UseForm } from '../Hooks/UseForm'
+import { UsuarioContext } from '../Context/UsuarioContext'
 
 export const Login = () => {
 
@@ -10,8 +11,19 @@ export const Login = () => {
     redes: ''
   }
 
-  const { usuario, nombre, tecnologia, email, redes, handleInput, onsubmitForm } = UseForm(initalForm)
- 
+  const { usuario, nombre, tecnologia, email, redes, handleInput } = UseForm(initalForm)
+  const { setUser } = useContext( UsuarioContext)
+
+   const onsubmitForm = (evento) => {
+    evento.preventDefault();
+    if (Object.values(usuario).some(campo => campo.trim() === '')){
+      alert('Todos los campos son obligatorios')
+      return;
+    } 
+    console.log(usuario)
+  }
+
+
 
   return (
     <form className='container' onSubmit={onsubmitForm}>

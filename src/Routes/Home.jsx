@@ -3,7 +3,7 @@ import { UsuarioContext } from '../Context/UsuarioContext'
 
 export const Home = () => {
 
-  const { usuario } = useContext(UsuarioContext)
+  const { user } = useContext(UsuarioContext)
   return (
     <>
       <table className="table table-warning">
@@ -17,10 +17,10 @@ export const Home = () => {
         </thead>
         <tbody>
           <tr>
-            <th scope="row">{usuario.nombre}</th>
-            <td>{usuario.tecnologia}</td>
-            <td>{usuario.email}</td>
-            <td>{usuario.redes}</td>
+            <th scope="row">{user.nombre}</th>
+            <td>{user.tecnologia}</td>
+            <td>{user.email}</td>
+            <td>{user.redes}</td>
           </tr>
         </tbody>
       </table>
