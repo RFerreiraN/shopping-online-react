@@ -10,8 +10,8 @@ export const Login = () => {
     redes: ''
   }
 
-  const { usuario, handleInput, onsubmitForm } = UseForm(initalForm)
-  const { nombre, tecnologia, email, redes } = usuario
+  const { usuario, nombre, tecnologia, email, redes, handleInput, onsubmitForm } = UseForm(initalForm)
+ 
 
   return (
     <form className='container' onSubmit={onsubmitForm}>

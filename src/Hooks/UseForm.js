@@ -13,7 +13,6 @@ export const UseForm = (initialForm) => {
   };
   const onsubmitForm = (evento) => {
     evento.preventDefault();
-    if(usuario.nombre.trim() === '' || usuario.tecnologia.trim() === '' || usuario.email.trim() === '' || usuario.redes.trim() === '' ) return
     console.log(usuario)
     resetForm()
   }
@@ -23,6 +22,7 @@ export const UseForm = (initialForm) => {
   }
 
   return {
+    ...usuario,
     usuario,
     handleInput,
     onsubmitForm

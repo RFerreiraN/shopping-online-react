@@ -4,8 +4,7 @@ import { UsuarioContext } from '../Context/UsuarioContext'
 export const Carrito = () => {
 
   const { usuario } = useContext(UsuarioContext)
-  console.log(usuario)
-  
+
   return (
     <>
       <ul>
